@@ -39,7 +39,7 @@ class NodeTransSession extends EventEmitter {
       let mp4FileName = dateFormat('yyyy-mm-dd-HH-MM-ss') + '.mp4';
       let mapMp4 = `${this.conf.mp4Flags}${ouPath}/${mp4FileName}|`;
       mapStr += mapMp4;
-      context.nodeEvent.emit('transMP4', mp4FileName);
+      context.nodeEvent.emit('transMP4', mp4FileName, ouPath);
       Logger.log('[Transmuxing MP4] ' + this.conf.streamPath + ' to ' + ouPath + '/' + mp4FileName);
     }
     if (this.conf.hls) {
